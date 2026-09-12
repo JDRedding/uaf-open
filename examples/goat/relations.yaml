@@ -1,0 +1,29 @@
+relations:
+  - source: op.prevent-goat-entry
+    operator: supports
+    target: cap.protect-garden
+
+  - source: op.prevent-goat-entry
+    operator: performedBy
+    target: perf.gardener
+
+  - source: perf.gardener
+    operator: exchanges
+    target: perf.gardener
+    evidence: ex.goat-detection
+
+  - source: res.fence
+    operator: provides
+    target: svc.boundary-protection
+
+  - source: svc.boundary-protection
+    operator: realizes
+    target: op.prevent-goat-entry
+
+  - source: res.fence
+    operator: constrainedBy
+    target: con.boundary-strength
+
+  - source: ar.fence-west-plot
+    operator: instantiates
+    target: res.fence
