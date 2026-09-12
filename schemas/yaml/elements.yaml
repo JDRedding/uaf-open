@@ -1,0 +1,24 @@
+# Minimal schema for elements.yaml
+
+required_fields:
+  - id
+  - type
+  - name
+
+allowed_types:
+  - Capability
+  - OperationalActivity
+  - OperationalPerformer
+  - Exchange
+  - Service
+  - Resource
+  - Constraint
+  - Project
+  - ActualResource
+
+structure:
+  elements:
+    - id: string
+      type: one_of(allowed_types)
+      name: string
+      description: optional string
