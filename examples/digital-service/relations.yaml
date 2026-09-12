@@ -1,0 +1,33 @@
+relations:
+  - source: op.manage-case
+    operator: supports
+    target: cap.reduce-case-resolution-time
+
+  - source: op.manage-case
+    operator: performedBy
+    target: perf.case-worker
+
+  - source: perf.case-worker
+    operator: exchanges
+    target: perf.case-worker
+    evidence: ex.case-update
+
+  - source: res.api-container
+    operator: provides
+    target: svc.case-management-api
+
+  - source: svc.case-management-api
+    operator: realizes
+    target: op.manage-case
+
+  - source: res.api-container
+    operator: constrainedBy
+    target: con.data-retention-7y
+
+  - source: proj.case-system-modernization
+    operator: provides
+    target: res.api-container
+
+  - source: ar.api-container-prod-1
+    operator: instantiates
+    target: res.api-container
