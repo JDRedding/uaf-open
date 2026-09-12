@@ -1,0 +1,34 @@
+{
+  "title": "UAF-Open Relations Schema (v0.1)",
+  "type": "object",
+  "required": ["relations"],
+  "properties": {
+    "relations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["source", "operator", "target"],
+        "properties": {
+          "source": { "type": "string" },
+          "operator": {
+            "type": "string",
+            "enum": [
+              "supports",
+              "performedBy",
+              "exchanges",
+              "realizes",
+              "provides",
+              "constrainedBy",
+              "governedBy",
+              "instantiates",
+              "tracesTo",
+              "verifiedBy"
+            ]
+          },
+          "target": { "type": "string" },
+          "evidence": { "type": "string" }
+        }
+      }
+    }
+  }
+}
