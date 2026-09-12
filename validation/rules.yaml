@@ -1,1 +1,82 @@
+# uaf-open/validation/rules.yaml
+
+validation_rules:
+
+  - id: V-001
+    name: No dangling elements
+    description: Every element must appear in at least one relation.
+    applies_to: any
+    must_be_referenced: true
+
+  - id: V-002
+    name: Typed relation correctness
+    description: Relation operators must match allowed source/target types.
+    applies_to: any
+    must_conform_to:
+      schema: ../metamodel/relations.yaml
+
+  - id: V-003
+    name: Unique IDs
+    description: All element IDs must be globally unique across the repository.
+    applies_to: any
+    must_be_unique: id
+
+  - id: V-004
+    name: No orphan capabilities
+    description: Every Capability must be supported by at least one OperationalActivity.
+    applies_to: Capability
+    must_exist:
+      relation: supports
+      source_type: OperationalActivity
+
+  - id: V-005
+    name: No orphan operational activities
+    description: Every OperationalActivity must be realized by at least one Resource or Service.
+    applies_to: OperationalActivity
+    must_exist:
+      relation: realizes
+      source_type: [Resource, Service]
+
+  - id: V-006
+    name: No orphan resources
+    description: Every Resource must either provide a Service or realize an OperationalActivity.
+    applies_to: Resource
+    must_exist_one_of:
+      - relation: provides
+        target_type: Service
+      - relation: realizes
+        target_type: OperationalActivity
+
+  - id: V-007
+    name: Actual resources must instantiate design resources
+    description: Every ActualResource must instantiate a Resource.
+    applies_to: ActualResource
+    must_exist:
+      relation: instantiates
+      target_type: Resource
+
+  - id: V-008
+    name: Constraints must bind something
+    description: Every Constraint must constrain at least one OperationalActivity or Resource.
+    applies_to: Constraint
+    must_exist_one_of:
+      - relation: governedBy
+        source_type: OperationalActivity
+      - relation: constrainedBy
+        source_type: Resource
+
+  - id: V-009
+    name: Projects must deliver something
+    description: Every Project must provide at least one Resource or Service.
+    applies_to: Project
+    must_exist:
+      relation: provides
+      target_type: [Resource, Service]
+
+  - id: V-010
+    name: Weak traces cannot satisfy validation
+    description: tracesTo links alone cannot satisfy any required relation.
+    applies_to: any
+    forbidden_if_only:
+      operator: tracesTo
 
