@@ -125,4 +125,4 @@ Future versions may add:
 - adapters for SysML‑v2, UML, ArchiMate  
 - richer examples  
 
-Future work: **Plan RDG for v0.2**
+Future work: **[Plan RDG for v0.2](https://github.com/JDRedding/uaf-open/blob/main/ROADMAP.md)**
