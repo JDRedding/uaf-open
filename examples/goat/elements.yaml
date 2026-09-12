@@ -1,0 +1,32 @@
+elements:
+  - id: cap.protect-garden
+    type: Capability
+    name: Protect garden productivity
+
+  - id: op.prevent-goat-entry
+    type: OperationalActivity
+    name: Prevent goat entry into garden
+
+  - id: perf.gardener
+    type: OperationalPerformer
+    name: Gardener
+
+  - id: ex.goat-detection
+    type: Exchange
+    name: Goat detection alert
+
+  - id: res.fence
+    type: Resource
+    name: Perimeter fence
+
+  - id: svc.boundary-protection
+    type: Service
+    name: Boundary protection service
+
+  - id: con.boundary-strength
+    type: Constraint
+    name: Boundary must resist ordinary goat access
+
+  - id: ar.fence-west-plot
+    type: ActualResource
+    name: West plot fence installation
