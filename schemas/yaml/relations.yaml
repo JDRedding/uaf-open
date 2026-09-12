@@ -1,0 +1,25 @@
+# Minimal schema for relations.yaml
+
+required_fields:
+  - source
+  - operator
+  - target
+
+allowed_operators:
+  - supports
+  - performedBy
+  - exchanges
+  - realizes
+  - provides
+  - constrainedBy
+  - governedBy
+  - instantiates
+  - tracesTo
+  - verifiedBy
+
+structure:
+  relations:
+    - source: string
+      operator: one_of(allowed_operators)
+      target: string
+      evidence: optional string
