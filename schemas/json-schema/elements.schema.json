@@ -1,0 +1,33 @@
+{
+  "title": "UAF-Open Elements Schema (v0.1)",
+  "type": "object",
+  "required": ["elements"],
+  "properties": {
+    "elements": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "type", "name"],
+        "properties": {
+          "id": { "type": "string" },
+          "type": {
+            "type": "string",
+            "enum": [
+              "Capability",
+              "OperationalActivity",
+              "OperationalPerformer",
+              "Exchange",
+              "Service",
+              "Resource",
+              "Constraint",
+              "Project",
+              "ActualResource"
+            ]
+          },
+          "name": { "type": "string" },
+          "description": { "type": "string" }
+        }
+      }
+    }
+  }
+}
