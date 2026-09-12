@@ -111,7 +111,7 @@ This produces a **portable, reviewable, tool‑neutral architecture**.
 - **Tool‑neutral**: SysML, UML, ArchiMate, C4 are adapters, not sources of truth.  
 - **Causally complete**: every realization must justify itself.  
 - **Minimal**: only the essential UAF concepts.  
-- **Extensible**: RDG, formal methods, and adapters can be added later.
+- **Extensible**: Relationalism, formal methods, and adapters can be added later.
 
 ---
 
