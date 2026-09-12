@@ -1,4 +1,4 @@
-## 🔷 Why this example works
+## 🔷 Minimal digital‑service example
 This tiny model demonstrates the full causal chain:
 
 - **Capability:** reduce case resolution time  
