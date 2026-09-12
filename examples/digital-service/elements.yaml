@@ -1,0 +1,36 @@
+elements:
+  - id: cap.reduce-case-resolution-time
+    type: Capability
+    name: Reduce case resolution time
+
+  - id: op.manage-case
+    type: OperationalActivity
+    name: Manage case lifecycle
+
+  - id: perf.case-worker
+    type: OperationalPerformer
+    name: Case worker
+
+  - id: ex.case-update
+    type: Exchange
+    name: Case update notification
+
+  - id: svc.case-management-api
+    type: Service
+    name: Case management API
+
+  - id: res.api-container
+    type: Resource
+    name: API container (deployable unit)
+
+  - id: con.data-retention-7y
+    type: Constraint
+    name: Case data must be retained for 7 years
+
+  - id: proj.case-system-modernization
+    type: Project
+    name: Case system modernization project
+
+  - id: ar.api-container-prod-1
+    type: ActualResource
+    name: Production API container instance #1
