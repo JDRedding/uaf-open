@@ -1,1 +1,21 @@
+# uaf-open/metamodel/core.yaml
+types:
+  - id: Capability
+    description: Strategic intent; what the enterprise must achieve.
+  - id: OperationalActivity
+    description: Behavior, roles, and exchanges needed to satisfy capability.
+  - id: OperationalPerformer
+    description: Actor or organization performing operational activities.
+  - id: Exchange
+    description: Information, material, or resource flow between performers.
+  - id: Service
+    description: Logical function or behavior provided by a solution.
+  - id: Resource
+    description: Physical, software, data, or organizational asset realizing services.
+  - id: Constraint
+    description: Requirement, policy, rule, or limitation governing behavior or realization.
+  - id: Project
+    description: Planned effort delivering resources or services.
+  - id: ActualResource
+    description: Observed, deployed, or instantiated configuration of a resource.
 
