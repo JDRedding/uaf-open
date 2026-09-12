@@ -1,1 +1,60 @@
+# uaf-open/mappings/causal-closure.yaml
+
+causal_closure:
+
+  - id: CC-001
+    name: Realization must justify itself
+    description: Every Resource or Service must realize at least one OperationalActivity.
+    applies_to: [Resource, Service]
+    must_exist:
+      relation: realizes
+      target_type: OperationalActivity
+
+  - id: CC-002
+    name: Operational behavior must support capability
+    description: Every OperationalActivity must support at least one Capability.
+    applies_to: [OperationalActivity]
+    must_exist:
+      relation: supports
+      target_type: Capability
+
+  - id: CC-003
+    name: Actual resources must instantiate design resources
+    description: Every ActualResource must instantiate a Resource.
+    applies_to: [ActualResource]
+    must_exist:
+      relation: instantiates
+      target_type: Resource
+
+  - id: CC-004
+    name: Constraints must propagate downstream
+    description: Any Constraint governing an OperationalActivity must constrain the realizing Resource.
+    applies_to: [Constraint]
+    must_be_reachable_from:
+      via: [governedBy, realizes]
+      target_type: Resource
+
+  - id: CC-005
+    name: Projects must deliver realizations
+    description: Every Project must provide at least one Resource or Service.
+    applies_to: [Project]
+    must_exist:
+      relation: provides
+      target_type: [Resource, Service]
+
+  - id: CC-006
+    name: Exchanges must occur between performers
+    description: Every Exchange must be evidence of an exchanges relation between OperationalPerformers.
+    applies_to: [Exchange]
+    must_be_referenced_by:
+      relation: exchanges
+      source_type: OperationalPerformer
+      target_type: OperationalPerformer
+
+  - id: CC-007
+    name: Weak traces are not sufficient
+    description: tracesTo links alone cannot satisfy causal closure; they must be accompanied by a strong operator.
+    applies_to: any
+    forbidden_if_only:
+      operator: tracesTo
 
