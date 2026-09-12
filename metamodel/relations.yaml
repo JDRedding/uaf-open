@@ -1,1 +1,52 @@
+# uaf-open/metamodel/relations.yaml
+relations:
+  - operator: supports
+    source: OperationalActivity
+    target: Capability
+    meaning: Operational behavior contributes to strategic capability.
+
+  - operator: performedBy
+    source: OperationalActivity
+    target: OperationalPerformer
+    meaning: Performer executes the operational activity.
+
+  - operator: exchanges
+    source: OperationalPerformer
+    target: OperationalPerformer
+    meaning: Flow of information/material between performers.
+
+  - operator: realizes
+    source: Resource
+    target: OperationalActivity
+    meaning: Resource enables or implements operational behavior.
+
+  - operator: provides
+    source: Resource
+    target: Service
+    meaning: Resource delivers a logical service.
+
+  - operator: constrainedBy
+    source: Resource
+    target: Constraint
+    meaning: Resource must satisfy or comply with constraint.
+
+  - operator: governedBy
+    source: OperationalActivity
+    target: Constraint
+    meaning: Operational behavior is shaped or limited by constraint.
+
+  - operator: instantiates
+    source: ActualResource
+    target: Resource
+    meaning: Actual deployed configuration of a resource.
+
+  - operator: tracesTo
+    source: any
+    target: any
+    meaning: Weak explanatory linkage; not sufficient for satisfaction.
+
+  - operator: verifiedBy
+    source: any
+    target: ActualResource
+    meaning: Evidence demonstrates claim or requirement.
 
